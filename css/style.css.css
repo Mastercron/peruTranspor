@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+  background: #002f6c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a1f44;
+  padding: 15px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-cotizacion {
+  background: orange;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  padding: 40px;
+}
+
+.hero img {
+  max-width: 400px;
+}
+
+/* Sections */
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.dark {
+  background: #f5f5f5;
+}
+
+/* Footer */
+footer {
+  background: #0a1f44;
+  color: white;
+  padding: 30px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  font-size: 25px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero {flex-direction: column;}
+  .nav-links {display:none;}
+}

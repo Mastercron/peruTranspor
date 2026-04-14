@@ -1,0 +1,193 @@
+﻿.contacto-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+}
+
+.contacto-wrapper {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contacto-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.info-card {
+  padding: 1.5rem;
+  border-radius: 24px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.info-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.95rem;
+  background: rgba(11, 61, 120, 0.1);
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.info-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  color: var(--primary-dark);
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form {
+  border-radius: 28px;
+  padding: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 0.93rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid rgba(11, 61, 120, 0.14);
+  border-radius: 16px;
+  background: #f8fbff;
+  color: var(--text);
+  padding: 0.95rem 1rem 0.95rem 2.9rem;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(249, 115, 22, 0.75);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+  background: #fff;
+}
+
+.form-group i {
+  position: absolute;
+  left: 1rem;
+  top: 2.65rem;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.form-group textarea + i {
+  top: 3rem;
+}
+
+.form-group.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0.6rem 0 1.25rem;
+}
+
+.form-group.checkbox input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.22rem;
+  padding: 0;
+}
+
+.form-group.checkbox label {
+  margin: 0;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.btn-submit {
+  width: 100%;
+  min-height: 3.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--secondary), #ff8b3d);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  box-shadow: 0 16px 35px rgba(249, 115, 22, 0.24);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.form-message {
+  display: none;
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 0.95rem 1rem;
+  font-weight: 600;
+}
+
+.form-message.success,
+.form-message.error {
+  display: block;
+}
+
+.form-message.success {
+  background: #e9f8ef;
+  color: #1f7a43;
+  border: 1px solid #bfe7cb;
+}
+
+.form-message.error {
+  background: #fff1f2;
+  color: #b42318;
+  border: 1px solid #f7c4c7;
+}
+
+@media (max-width: 960px) {
+  .contacto-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .contacto-info,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 1.4rem;
+  }
+}

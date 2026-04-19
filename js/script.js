@@ -144,12 +144,18 @@
           }
         });
 
-        const raw = await response.text();
+        const raw = (await response.text()).replace(/^\uFEFF/, '').trim();
+        const contentType = response.headers.get('content-type') || '';
         let result;
 
         try {
           result = JSON.parse(raw);
         } catch (error) {
+          console.error('Respuesta no JSON del servidor:', {
+            status: response.status,
+            contentType,
+            body: raw
+          });
           throw new Error('La respuesta del servidor no fue JSON válido.');
         }
 

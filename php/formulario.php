@@ -135,15 +135,26 @@ function loadEnvFile(string $path): void
 
 function getMailConfig(): array
 {
+    $provider = strtolower((string) getEnvValue('MAIL_PROVIDER', 'gmail'));
+
+    // Presets SMTP por proveedor: [host, puerto, cifrado]
+    $presets = [
+        'gmail' => ['smtp.gmail.com', 587, 'tls'],
+        'outlook' => ['smtp-mail.outlook.com', 587, 'tls'],
+        'hotmail' => ['smtp-mail.outlook.com', 587, 'tls'],
+    ];
+    $preset = $presets[$provider] ?? $presets['gmail'];
+
     $smtpUsername = (string) getEnvValue('MAIL_USERNAME', '');
     $smtpPassword = (string) getEnvValue('MAIL_PASSWORD', '');
 
     return [
+        'provider' => $provider,
         'recipient_email' => getEnvValue('CONTACT_RECIPIENT_EMAIL', 'hflores07@gmail.com'),
         'recipient_name' => getEnvValue('CONTACT_RECIPIENT_NAME', 'PERU TRANSPORT & LOGISTIC E.I.R.L.'),
-        'smtp_host' => getEnvValue('MAIL_HOST', 'smtp.gmail.com'),
-        'smtp_port' => (int) getEnvValue('MAIL_PORT', '587'),
-        'smtp_secure' => strtolower((string) getEnvValue('MAIL_ENCRYPTION', 'tls')),
+        'smtp_host' => getEnvValue('MAIL_HOST', $preset[0]),
+        'smtp_port' => (int) getEnvValue('MAIL_PORT', (string) $preset[1]),
+        'smtp_secure' => strtolower((string) getEnvValue('MAIL_ENCRYPTION', $preset[2])),
         'smtp_username' => $smtpUsername,
         'smtp_password' => $smtpPassword,
         'from_email' => getEnvValue('MAIL_FROM_ADDRESS', $smtpUsername),
@@ -265,7 +276,7 @@ if ($config['smtp_username'] === '' || $config['smtp_password'] === '' || $confi
 }
 
 if (isPlaceholderSecret($config['smtp_password'])) {
-    respondJson(false, 'Falta colocar la App Password real de Gmail en el archivo `.env`.', [], 500);
+    respondJson(false, 'Falta colocar la contraseña de aplicación real de ' . $config['provider'] . ' en el archivo `.env`.', [], 500);
 }
 
 $empresa = cleanField($_POST['empresa'] ?? '');
@@ -411,7 +422,7 @@ appendContactLog([
 if (!$companyResult['success']) {
     respondJson(
         false,
-        'No se pudo enviar el correo principal. Verifica usuario, contraseña de aplicación de Gmail y configuración SMTP.',
+        'No se pudo enviar el correo principal. Verifica usuario, contraseña de aplicación de ' . $config['provider'] . ' y configuración SMTP.',
         [
             'company_mail_sent' => false,
             'customer_mail_sent' => false,

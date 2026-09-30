@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/formulario.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -75,7 +75,10 @@
         </div>
 
         <div class="hero-card" data-aos="fade-left">
-          <img src="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.jpg" alt="Portada de Perú Transport con el mensaje movemos tu carga con seguridad y confianza">
+          <picture>
+            <source type="image/webp" srcset="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.webp">
+            <img src="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.jpg" width="1024" height="1536" alt="Portada de Perú Transport con el mensaje movemos tu carga con seguridad y confianza">
+          </picture>
          
           
         </div>
@@ -126,12 +129,12 @@
         <div class="services-grid">
           <article class="service-item" data-aos="flip-left" data-aos-delay="50">
             <i class="fas fa-truck-moving"></i>
-            <h3>Transporte terrestre1</h3>
+            <h3>Transporte terrestre</h3>
             <p>Movilizamos carga con coordinación operativa y atención comercial permanente.</p>
           </article>
           <article class="service-item" data-aos="flip-left" data-aos-delay="100">
             <i class="fas fa-map-location-dot"></i>
-            <h3>Distribution</h3>
+            <h3>Distribución</h3>
             <p>Organizamos entregas y rutas para mejorar tiempos y cobertura de destino.</p>
           </article>
           <article class="service-item" data-aos="flip-left" data-aos-delay="150">
@@ -158,16 +161,28 @@
 
         <div class="gallery-grid">
           <figure class="gallery-card gallery-card--large" data-aos="fade-up">
-            <img src="assets/img/camiones/camion_peru_1.jpg" alt="Camión de Perú Transport en operación">
+            <picture>
+              <source type="image/webp" srcset="assets/img/camiones/camion_peru_1.webp">
+              <img src="assets/img/camiones/camion_peru_1.jpg" width="1024" height="1024" loading="lazy" alt="Camión de Perú Transport en operación">
+            </picture>
           </figure>
           <figure class="gallery-card" data-aos="fade-up" data-aos-delay="50">
-            <img src="assets/img/camiones/camion_peru_3.jpg" alt="Unidad naranja de Perú Transport">
+            <picture>
+              <source type="image/webp" srcset="assets/img/camiones/camion_peru_3.webp">
+              <img src="assets/img/camiones/camion_peru_3.jpg" width="2048" height="1365" loading="lazy" alt="Unidad naranja de Perú Transport">
+            </picture>
           </figure>
           <figure class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/camiones/camion_peru_4.jpg" alt="Camión de carga con contenedor">
+            <picture>
+              <source type="image/webp" srcset="assets/img/camiones/camion_peru_4.webp">
+              <img src="assets/img/camiones/camion_peru_4.jpg" width="1536" height="1024" loading="lazy" alt="Camión de carga con contenedor">
+            </picture>
           </figure>
           <figure class="gallery-card" data-aos="fade-up" data-aos-delay="150">
-            <img src="assets/img/camiones/camion_peru_5.jpg" alt="Camión logístico de la empresa en carretera">
+            <picture>
+              <source type="image/webp" srcset="assets/img/camiones/camion_peru_5.webp">
+              <img src="assets/img/camiones/camion_peru_5.jpg" width="2048" height="1365" loading="lazy" alt="Camión logístico de la empresa en carretera">
+            </picture>
           </figure>
         </div>
       </div>
@@ -323,8 +338,8 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/sweetalert2/sweetalert2.all.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

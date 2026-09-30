@@ -434,6 +434,12 @@ header {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
+.gallery-card picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .gallery-card img {
   width: 100%;
   height: 100%;

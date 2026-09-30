@@ -271,14 +271,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respondJson(false, 'Método no permitido.', [], 405);
 }
 
-if ($config['smtp_username'] === '' || $config['smtp_password'] === '' || $config['from_email'] === '') {
-    respondJson(false, 'La configuración SMTP está incompleta en el servidor.', [], 500);
-}
-
-if (isPlaceholderSecret($config['smtp_password'])) {
-    respondJson(false, 'Falta colocar la contraseña de aplicación real de ' . $config['provider'] . ' en el archivo `.env`.', [], 500);
-}
-
 $empresa = cleanField($_POST['empresa'] ?? '');
 $nombre = cleanField($_POST['nombre'] ?? '');
 $telefono = cleanField($_POST['telefono'] ?? '');
@@ -297,6 +289,15 @@ if ($telefono === '') {
 
 if ($correo === '' || !filter_var($correo, FILTER_VALIDATE_EMAIL)) {
     respondJson(false, 'Por favor, ingresa un correo electrónico válido.', [], 422);
+}
+
+// Validación de entrada primero; la configuración SMTP solo se comprueba antes de enviar.
+if ($config['smtp_username'] === '' || $config['smtp_password'] === '' || $config['from_email'] === '') {
+    respondJson(false, 'La configuración SMTP está incompleta en el servidor.', [], 500);
+}
+
+if (isPlaceholderSecret($config['smtp_password'])) {
+    respondJson(false, 'Falta colocar la contraseña de aplicación real de ' . $config['provider'] . ' en el archivo `.env`.', [], 500);
 }
 
 $empresaTexto = $empresa !== '' ? $empresa : 'No especificada';

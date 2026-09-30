@@ -1,0 +1,21 @@
+# Secretos y configuración sensible: NUNCA commitear
+.env
+.env.*
+!.env.example
+
+# Dependencias y binarios de Composer
+/vendor/
+composer.phar
+composer-setup.php
+
+# Basura de entorno de desarrollo local (XAMPP)
+/data/
+/logs/
+
+# Node
+/node_modules/
+
+# Sistemas operativos / editores
+.DS_Store
+Thumbs.db
+*.log

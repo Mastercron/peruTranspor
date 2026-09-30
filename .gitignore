@@ -4,7 +4,6 @@
 !.env.example
 
 # Dependencias y binarios de Composer
-/vendor/
 composer.phar
 composer-setup.php
 

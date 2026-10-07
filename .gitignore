@@ -1,20 +1,124 @@
-# Secretos y configuración sensible: NUNCA commitear
+# ============================================================
+#  PERU TRANSPORT - .gitignore
+#  Archivos y carpetas que NO deben subirse a GitHub
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. CREDENCIALES Y CONFIGURACIÓN SENSIBLE
+# ------------------------------------------------------------
+# El .env contiene la App Password de Gmail y otras credenciales.
+# NUNCA debe subirse a GitHub.
 .env
-.env.*
-!.env.example
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.env
 
-# Dependencias y binarios de Composer
+# ------------------------------------------------------------
+# 2. DEPENDENCIAS
+# ------------------------------------------------------------
+# OJO: la carpeta vendor/ SÍ se sube a GitHub a propósito, porque
+# el hosting compartido no ejecuta "composer install". Por eso aquí
+# NO se ignora vendor/. Solo se ignoran los binarios/instaladores.
 composer.phar
-composer-setup.php
+composer-setup.exe
 
-# Basura de entorno de desarrollo local (XAMPP)
-/data/
-/logs/
+# ------------------------------------------------------------
+# 3. ARCHIVOS DE LOGS
+# ------------------------------------------------------------
+*.log
+logs/
+*.log.*
+error_log
+php_errors.log
+debug.log
 
-# Node
+# ------------------------------------------------------------
+# 4. ARCHIVOS TEMPORALES Y CACHÉ
+# ------------------------------------------------------------
+/tmp/
+/temp/
+/cache/
+*.tmp
+*.temp
+*.cache
+*.bak
+*.old
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# 5. ARCHIVOS DEL SISTEMA OPERATIVO
+# ------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# ------------------------------------------------------------
+# 6. EDITORES DE CÓDIGO (configuración personal)
+# ------------------------------------------------------------
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains (PhpStorm, WebStorm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ------------------------------------------------------------
+# 7. ARCHIVOS DE COMPILACIÓN / BUILD
+# ------------------------------------------------------------
+/dist/
+/build/
+*.min.js.map
+*.min.css.map
 /node_modules/
 
-# Sistemas operativos / editores
-.DS_Store
-Thumbs.db
-*.log
+# ------------------------------------------------------------
+# 8. RESPALDOS Y ARCHIVOS DE BASE DE DATOS
+# ------------------------------------------------------------
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+backup/
+backups/
+
+# ------------------------------------------------------------
+# 9. EXCEPCIONES (archivos SÍ deben subirse aunque coincidan)
+# ------------------------------------------------------------
+# Estos son archivos que SÍ queremos versionar
+!.env.example
+!composer.json
+!composer.lock
+!.gitignore
+!README.md

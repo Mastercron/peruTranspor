@@ -487,6 +487,46 @@ a.service-item:hover .service-more i {
   transform: translateX(4px);
 }
 
+a.card--link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.card--link p {
+  flex: 1 1 auto;
+}
+
+a.card--link:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.card-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.card-hint i {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  transition: transform var(--transition);
+}
+
+a.card--link:hover .card-hint i {
+  transform: translateX(4px);
+}
+
 .gallery-section {
   background: #fff;
 }

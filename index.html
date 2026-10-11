@@ -279,17 +279,34 @@
             <article class="info-card">
               <i class="fas fa-map-marker-alt"></i>
               <h3>Dirección</h3>
-              <p>JR. Nazca Nro. 123 Of. 10 U.V. Santa Marina Norte, Prov. Const. del Callao - Callao</p>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=JR.+Nazca+Nro.+123+Of.+10+Santa+Marina+Norte+Callao+Peru" target="_blank" rel="noopener">JR. Nazca Nro. 123 Of. 10 U.V. Santa Marina Norte, Prov. Const. del Callao - Callao</a></p>
+              <div class="info-actions">
+                <a class="info-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=JR.+Nazca+Nro.+123+Of.+10+Santa+Marina+Norte+Callao+Peru" target="_blank" rel="noopener"><i class="fas fa-diamond-turn-right"></i> Cómo llegar</a>
+                <a class="info-link js-pick-delivery" href="#contacto"><i class="fas fa-location-dot"></i> Indicar punto de entrega</a>
+                <a class="info-link js-track-cargo" href="#contacto"><i class="fas fa-boxes-stacked"></i> Seguimiento de mi carga</a>
+              </div>
             </article>
             <article class="info-card">
               <i class="fas fa-phone-alt"></i>
               <h3>Teléfonos</h3>
-              <p>+51 958 954 165<br>+51 908 915 422</p>
+              <p>
+                <a href="tel:+51958954165">+51 958 954 165</a> <span class="info-tag">Central</span><br>
+                <a href="tel:+51908915422">+51 908 915 422</a> <span class="info-tag">Operaciones</span>
+              </p>
+              <div class="info-actions">
+                <a class="info-link" href="https://wa.me/51908915422?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20transporte" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Elegir WhatsApp</a>
+              </div>
             </article>
             <article class="info-card">
               <i class="fas fa-envelope"></i>
               <h3>Correos</h3>
-              <p>gerencia@peruaduanas.com<br>ventas@perutransport.com</p>
+              <p>
+                <a href="mailto:gerencia@peruaduanas.com?subject=Solicitud%20de%20cotizaci%C3%B3n%20-%20PERU%20TRANSPORT&amp;body=Hola%2C%20quiero%20cotizar%20un%20traslado.%0A%0AEmpresa%3A%20%0ATipo%20de%20carga%3A%20%0AOrigen%3A%20%0ADestino%20o%20punto%20de%20entrega%3A%20%0AFecha%20estimada%3A%20%0A%0AComentarios%3A%20">gerencia@peruaduanas.com</a><br>
+                <a href="mailto:ventas@perutransport.com?subject=Consulta%20comercial%20-%20PERU%20TRANSPORT&amp;body=Hola%2C%20tengo%20una%20consulta%20comercial.%0A%0AEmpresa%3A%20%0AServicio%20de%20inter%C3%A9s%3A%20%0A%0ADetalle%3A%20">ventas@perutransport.com</a>
+              </p>
+              <div class="info-actions">
+                <span class="info-note"><i class="fas fa-wand-magic-sparkles"></i> Al escribirnos, el asunto y la plantilla ya van listos para ahorrar tiempo.</span>
+              </div>
             </article>
             <article class="info-card">
               <i class="fas fa-clock"></i>
@@ -323,6 +340,13 @@
                 <input type="email" name="correo" id="correo" placeholder="tucorreo@empresa.com" autocomplete="email" required>
                 <i class="fas fa-envelope"></i>
               </div>
+            </div>
+
+            <div class="form-group">
+              <label for="destino">Punto de entrega / destino (opcional)</label>
+              <input type="text" name="destino" id="destino" placeholder="Dirección o coordenadas donde debe llegar tu carga">
+              <i class="fas fa-location-dot"></i>
+              <button type="button" class="btn-geo" id="btnGeo"><i class="fas fa-crosshairs"></i> Usar mi ubicación actual</button>
             </div>
 
             <div class="form-group">

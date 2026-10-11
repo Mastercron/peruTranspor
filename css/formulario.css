@@ -44,6 +44,98 @@
   font-size: 0.95rem;
 }
 
+.info-card p a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(11, 61, 120, 0.4);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.info-card p a:hover {
+  color: var(--secondary);
+  border-bottom-color: var(--secondary);
+}
+
+.info-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.9rem;
+}
+
+.info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.info-link i {
+  width: auto;
+  height: auto;
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+.info-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.info-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.info-note i {
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--secondary);
+  font-size: 0.8rem;
+}
+
+.btn-geo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(11, 61, 120, 0.25);
+  border-radius: 999px;
+  background: rgba(11, 61, 120, 0.06);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn-geo:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
 .form {
   border-radius: 28px;
   padding: 2rem;

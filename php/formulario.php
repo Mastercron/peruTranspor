@@ -276,6 +276,7 @@ $nombre = cleanField($_POST['nombre'] ?? '');
 $telefono = cleanField($_POST['telefono'] ?? '');
 $correo = cleanField($_POST['correo'] ?? '');
 $mensaje = cleanField($_POST['mensaje'] ?? '');
+$destino = cleanField($_POST['destino'] ?? '');
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'IP no disponible';
 $fecha = date('d/m/Y H:i:s');
 
@@ -302,6 +303,7 @@ if (isPlaceholderSecret($config['smtp_password'])) {
 
 $empresaTexto = $empresa !== '' ? $empresa : 'No especificada';
 $mensajeTexto = $mensaje !== '' ? $mensaje : 'Sin mensaje adicional.';
+$destinoTexto = $destino !== '' ? $destino : 'No especificado';
 
 $subjectCompany = 'Nueva solicitud desde la web - ' . $nombre;
 $bodyCompany = '
@@ -323,6 +325,7 @@ $bodyCompany = '
       <p><strong>Teléfono:</strong> ' . safeHtml($telefono) . '</p>
       <p><strong>Correo:</strong> ' . safeHtml($correo) . '</p>
       <p><strong>Mensaje:</strong><br>' . safeHtml($mensajeTexto) . '</p>
+      <p><strong>Punto de entrega / destino:</strong> ' . safeHtml($destinoTexto) . '</p>
       <hr style="border:none;border-top:1px solid #dce6f2;margin:24px 0;">
       <p><strong>Fecha:</strong> ' . safeHtml($fecha) . '</p>
       <p><strong>IP:</strong> ' . safeHtml($ip) . '</p>
@@ -364,6 +367,7 @@ $plainCompany .= "Nombre: {$nombre}\n";
 $plainCompany .= "Teléfono: {$telefono}\n";
 $plainCompany .= "Correo: {$correo}\n";
 $plainCompany .= "Mensaje: {$mensajeTexto}\n";
+$plainCompany .= "Punto de entrega / destino: {$destinoTexto}\n";
 $plainCompany .= "Fecha: {$fecha}\n";
 $plainCompany .= "IP: {$ip}\n";
 
@@ -410,6 +414,7 @@ appendContactLog([
     'telefono' => $telefono,
     'correo' => $correo,
     'mensaje' => $mensajeTexto,
+    'destino' => $destinoTexto,
     'ip' => $ip,
     'smtp_host' => $config['smtp_host'],
     'smtp_port' => $config['smtp_port'],

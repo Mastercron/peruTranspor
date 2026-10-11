@@ -184,4 +184,51 @@
       }
     });
   }
+
+  // Contacto dinámico: ubicación, punto de entrega y seguimiento de carga
+  const destinoInput = document.getElementById('destino');
+  const btnGeo = document.getElementById('btnGeo');
+  const mensajeArea = document.getElementById('mensaje');
+
+  const fillLocation = () => {
+    if (!destinoInput || !navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        destinoInput.value = latitude.toFixed(6) + ', ' + longitude.toFixed(6);
+        destinoInput.focus();
+      },
+      () => {
+        destinoInput.placeholder = 'Escribe la dirección de entrega manualmente';
+        destinoInput.focus();
+      },
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  };
+
+  if (btnGeo) {
+    btnGeo.addEventListener('click', fillLocation);
+  }
+
+  document.querySelectorAll('.js-pick-delivery').forEach((link) => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        if (destinoInput) {
+          destinoInput.focus();
+          fillLocation();
+        }
+      }, 350);
+    });
+  });
+
+  document.querySelectorAll('.js-track-cargo').forEach((link) => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        if (mensajeArea) {
+          mensajeArea.value = 'Solicito el seguimiento de mi carga.\n\nCódigo / referencia de envío: \nFecha de recojo: \nDetalle adicional: ';
+          mensajeArea.focus();
+        }
+      }, 350);
+    });
+  });
 });

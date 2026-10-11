@@ -91,12 +91,19 @@
         </div>
 
         <div class="hero-card" data-aos="fade-left">
-          <picture>
-            <source type="image/webp" srcset="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.webp">
-            <img src="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.jpg" width="1024" height="1536" alt="Portada de Perú Transport con el mensaje movemos tu carga con seguridad y confianza">
-          </picture>
-         
-          
+          <div class="hero-card__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.webp">
+              <img src="assets/img/camiones/Pagina%20de%20inicio%20de%20Per%C3%BA%20Transport.jpg" width="1024" height="1536" alt="Portada de Perú Transport con el mensaje movemos tu carga con seguridad y confianza">
+            </picture>
+
+            <!-- Zonas clicables sobre los elementos dibujados en la imagen de portada -->
+            <a class="hero-hotspot hero-hotspot--cotizar" href="#contacto" aria-label="Solicitar cotización">Solicitar cotización</a>
+            <a class="hero-hotspot hero-hotspot--serv1" href="servicios.html#transporte" aria-label="Ver detalle de Transporte Terrestre">Transporte Terrestre</a>
+            <a class="hero-hotspot hero-hotspot--serv2" href="servicios.html#distribucion" aria-label="Ver detalle de Distribución">Distribución</a>
+            <a class="hero-hotspot hero-hotspot--serv3" href="servicios.html#logistica" aria-label="Ver detalle de Logística y Almacenaje">Logística y Almacenaje</a>
+            <a class="hero-hotspot hero-hotspot--cobertura" href="#cobertura" aria-label="Ver cobertura">Ver cobertura</a>
+          </div>
         </div>
       </div>
     </section>
@@ -238,7 +245,7 @@
       </div>
     </section>
 
-    <section class="section coverage-section">
+    <section id="cobertura" class="section coverage-section">
       <div class="container coverage-box" data-aos="fade-up">
         <div class="coverage-copy">
           <span class="section-tag">Cobertura</span>

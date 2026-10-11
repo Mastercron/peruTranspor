@@ -326,6 +326,34 @@ header {
   object-fit: cover;
 }
 
+.hero-card__media {
+  position: relative;
+}
+
+/* Zonas clicables invisibles superpuestas a los elementos dibujados
+   en la imagen de portada (coordenadas en % del área de la imagen). */
+.hero-hotspot {
+  position: absolute;
+  display: block;
+  font-size: 0;
+  color: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+.hero-hotspot:hover,
+.hero-hotspot:focus-visible {
+  background: rgba(249, 115, 22, 0.10);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.55);
+}
+
+.hero-hotspot--cotizar { left: 8.5%; top: 22.4%; width: 25%; height: 3.8%; }
+.hero-hotspot--serv1 { left: 9.5%; top: 57.6%; width: 25.5%; height: 16%; }
+.hero-hotspot--serv2 { left: 36.5%; top: 57.6%; width: 26%; height: 16%; }
+.hero-hotspot--serv3 { left: 64.5%; top: 57.6%; width: 26%; height: 16%; }
+.hero-hotspot--cobertura { left: 44.3%; top: 87.9%; width: 19%; height: 3.6%; }
+
 .section {
   padding: 5rem 0;
 }
